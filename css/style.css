@@ -64,15 +64,17 @@ body {
 /* Headings
 ______________________*/
 h1 {
-  font: normal 36px inherit;
-  color: #000000;
-  margin: 0 0 10px;
+  font: normal 80px 'robotobold', sans-serif;
+  color: #ffffff;
+  margin: 0 0 25px;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
 }
 h1 small {
-  font-size: 0.666em;
+  font-size: 0.6em;
+  line-height: 1.4em;
   display: block;
+  font-family: 'robotoregular', sans-serif;
   color: inherit;
-  font-weight: bold;
 }
 h2 {
   font: normal 40px 'robotolight', sans-serif;
@@ -195,9 +197,30 @@ a.thumbnail:hover img {
 /************************
 	Lists Settings 
 *************************/
+.border-list li {
+  border-bottom: 1px solid black;
+  font-family: 'robotoregular', sans-serif;
+  padding: 5px 0;
+  -webkit-box-shadow: 0 1px 0 0 #0c161e;
+  box-shadow: 0 1px 0 0 #0c161e;
+}
+.border-list li a {
+  color: white;
+}
+.border-list li:first-child {
+  border-top: 1px solid black;
+  -webkit-box-shadow: 0 -1px 0 0 #0c161e;
+  box-shadow: 0 -1px 0 0 #0c161e;
+}
 .icons-list {
   list-style: url(../images/icon-list-1.png) inside;
   padding: 0;
+}
+.rtl .icons-list {
+  list-style: url(../images/icon-list-1-rtl.png) inside;
+}
+.rtl .caret-list {
+  list-style: url(../images/caret-right-rtl.png) inside;
 }
 .caret-list {
   list-style: url(../images/caret-right.png) inside;
@@ -209,11 +232,26 @@ a.thumbnail:hover img {
 .caret-list a:hover {
   color: white;
 }
-.sidebar-section .pen-list {
+.user-list {
+  list-style: url(../images/user-icon.png) inside;
+  padding: 0;
+}
+.user-list a {
+  color: #cacaca;
+}
+.pen-list {
   list-style: url(../images/pen-list.png) inside;
+}
+.sidebar-section .pen-list {
   padding: 15px 0;
 }
 .sidebar-section .pen-list a {
+  color: #848586;
+}
+.sidebar-section .user-list {
+  padding: 15px 0;
+}
+.sidebar-section .user-list a {
   color: #848586;
 }
 .sidebar-section .caret-list li {
@@ -231,6 +269,9 @@ a.thumbnail:hover img {
 .pb-widget {
   margin-bottom: 25px;
 }
+.mini-thumbs {
+  padding: 0;
+}
 .mini-thumbs li {
   width: 32%;
   margin: 10px 0 0;
@@ -242,7 +283,7 @@ a.thumbnail:hover img {
 ______________________*/
 #header {
   background: #e75635;
-  padding: 23px 0;
+  padding: 25px 0 0;
 }
 .header-top {
   position: relative;
@@ -254,10 +295,41 @@ ______________________*/
   display: inline-block;
 }
 .login-section {
-  margin: 3px 0;
+  margin: 5px 0 3px;
 }
 .logo {
   display: inline-block;
+}
+.search-wrap {
+  background: #1f2831;
+  padding: 60px 0 40px;
+  position: relative;
+  border-bottom: 1px solid #2e2f31;
+  -webkit-box-shadow: 0 1px 0 0 #535a61 inset;
+  box-shadow: 0 1px 0 0 #535a61 inset;
+}
+.search-wrap .top-caret {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  margin-left: -26px;
+}
+.search-wrap input {
+  background: #3f4f5f;
+  border-color: #3f4f5f;
+  height: 80px;
+  font-size: 28px;
+}
+.search-wrap input::-moz-placeholder {
+  color: #9394a2;
+}
+.search-wrap .input-group-btn .btn {
+  width: 150px;
+  font-size: 50px;
+  height: 80px;
+}
+.search-wrap .input-group-btn .btn span {
+  line-height: 1em;
 }
 .divider {
   margin: 0 10px;
@@ -293,6 +365,13 @@ ______________________*/
   padding: 10px 0;
 }
 .navbar {
+  position: relative;
+}
+.bottom-shadow {
+  position: absolute;
+  top: 100%;
+}
+.navbar {
   background-color: #eeeeee;
   background-image: -moz-linear-gradient(top, #bbbbbb, #eeeeee);
   background-image: -webkit-gradient(linear, 0 0, 0 100%, from(#bbbbbb), to(#eeeeee));
@@ -301,7 +380,7 @@ ______________________*/
   background-image: linear-gradient(to bottom, #bbbbbb, #eeeeee);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffbbbbbb', endColorstr='#ffeeeeee', GradientType=0);
-  margin-bottom: 0;
+  margin-bottom: 25px;
   -webkit-box-shadow: none;
   box-shadow: none;
 }
@@ -332,6 +411,19 @@ ______________________*/
 /************************
 	Banner Settings 
 *************************/
+.banner-wrap {
+  background: url(../images/banner-bg.png) no-repeat center bottom;
+  min-height: 400px;
+}
+.banner-wrap-2 {
+  background: url(../images/banner-bg-2.png) no-repeat center bottom;
+  min-height: 300px;
+}
+.banner-wrap-2 p {
+  font-size: 25px;
+  text-shadow: 2px 2px 0 rgba(0, 0, 0, 0.5);
+  color: white;
+}
 /******************************
 	Theme Settings 
 *******************************/
@@ -369,11 +461,88 @@ ______________________*/
 /**********************
 	 Theme Box
  **********************/
+.biograpy {
+  padding: 15px 0;
+  border-bottom: 1px solid black;
+  -webkit-box-shadow: 0 1px 0 0 #0c161e;
+  box-shadow: 0 1px 0 0 #0c161e;
+  color: #ccc;
+}
+.biograpy .tags-bar {
+  font-size: 13px;
+  color: #677e96;
+}
+.biograpy .tags-bar a {
+  color: #677e96;
+}
+.biograpy .tags-bar a:hover {
+  color: #e75635;
+}
+.biograpy h5 {
+  color: #ccc;
+  margin-bottom: 5px;
+}
+.biograpy .poet-name {
+  color: #e75635;
+  margin-bottom: 0;
+}
+.biograpy .poet-name a {
+  color: #e75635;
+}
+.biograpy .img-section {
+  max-width: 257px;
+  margin-right: 15px;
+}
+.biograpy p {
+  margin-bottom: 30px;
+}
+.biograpy .details-section {
+  margin-left: 272px;
+  margin-bottom: 35px;
+}
+.biograpy .comment-box {
+  background: #3f4f5f;
+  border: 1px solid #55687b;
+  padding: 0 15px;
+  margin-bottom: 35px;
+  position: relative;
+  -moz-border-radius: 5px;
+  -webkit-order-radius: 5px;
+  border-radius: 5px;
+}
+.biograpy .comment-box:before {
+  content: "";
+  display: inline-block;
+  width: 20px;
+  height: 10px;
+  position: absolute;
+  background: url(../images/comments-box.png);
+  top: 100%;
+  left: 5%;
+}
+.biograpy .comment-box h3 {
+  margin: 0;
+}
+.rtl .biograpy .img-section {
+  margin-right: 0;
+  margin-left: 15px;
+}
+.rtl .biograpy .comment-box:before {
+  left: auto;
+  right: 5%;
+}
+.rtl .details-section {
+  margin-left: 0;
+  margin-right: 272px;
+}
+.input-group-btn [class^="icon-"] {
+  line-height: inherit;
+}
 /******************************
 	Pagination Settings 
 *******************************/
 .theme-pagination {
-  margin: 25px 0;
+  margin: 20px 0 25px;
   list-style: none;
   padding: 0;
 }
@@ -414,6 +583,19 @@ ______________________*/
   color: white;
   background: #e75635;
 }
+.theme-pager {
+  margin: 20px 0;
+}
+.theme-pager a {
+  display: inline-block;
+  width: 30px;
+  height: 23px;
+  font-size: 20px;
+  color: white;
+  line-height: 16px;
+  background: #e75635;
+  text-align: center;
+}
 ::selection {
   color: #e75635;
   background: white;
@@ -431,9 +613,11 @@ ______________________*/
 #main {
   margin: 0;
 }
+.rtl #sidebar,
 #contents {
   padding: 0 10px 0 0;
 }
+.rtl #contents,
 #sidebar {
   padding: 0 0 0 10px;
 }
@@ -445,46 +629,54 @@ ______________________*/
 }
 .nav-tabs {
   border-bottom: none;
+  margin-bottom: 25px;
 }
 .nav-tabs > li {
   margin-bottom: 4px;
+  margin-right: 2px;
+  padding: 0 5px;
+  border-bottom: 3px solid #3f4f5f;
+}
+.nav-tabs > li:hover {
+  border-bottom: 3px solid #e75635;
 }
 .nav-tabs > li > a {
-  margin: 0 4px 0 0;
-  background: none;
+  margin: 0;
+  background: black;
   text-transform: uppercase;
-  color: #848586;
+  color: #aaaaaa;
   -moz-border-radius: 0;
   -webkit-order-radius: 0;
   border-radius: 0;
   border-style: solid;
-  border-color: #e1e1e1;
-  border-width: 2px 0;
-  padding: 2px 15px 3px;
+  border-color: #3f4f5f;
+  border-width: 3px 3px 0;
+  padding: 5px 15px;
   font-size: 16px;
+  margin-bottom: -3px;
 }
 .nav-tabs > li > a:focus,
 .nav-tabs > li > a:hover {
-  background: none;
-  color: black;
-  border-style: solid;
-  border-color: #fdd559;
-  border-width: 2px 0;
+  background: black;
+  border-width: 3px 3px 0;
+  color: #e75635;
+  border-color: #e75635;
+}
+.nav-tabs > li.active {
+  border-bottom: 3px solid #e75635;
 }
 .nav-tabs > li.active a {
-  background: none;
-  color: black;
-  border-style: solid;
-  border-color: #fdd559;
-  border-width: 2px 0;
+  background: black;
+  border-width: 3px 3px 0;
+  color: #e75635;
+  border-color: #e75635;
 }
 .nav-tabs > li.active a:hover,
 .nav-tabs > li.active a:focus {
-  color: black;
-  background: none;
-  border-style: solid;
-  border-color: #fdd559;
-  border-width: 2px 0;
+  background: black;
+  border-width: 3px 3px 0;
+  color: #e75635;
+  border-color: #e75635;
 }
 .poem-details-wrap {
   padding-bottom: 25px;
@@ -514,14 +706,53 @@ ______________________*/
   color: #e75635;
   font-size: 14px;
 }
+.rtl .poem-header img {
+  margin-right: 0;
+  margin-left: 15px;
+}
+.rtl .icon-caret-left:before {
+  content: "\f0da";
+}
+.rtl .icon-caret-right:before {
+  content: "\f0d9";
+}
 .theme-box {
   padding: 15px 10px;
   background: rgba(14, 23, 32, 0.75);
   border: 1px solid #2a3847;
 }
 /**********************************
+		Table Settings 
+************************************/
+.theme-table {
+  background: #0e1720;
+  border: 1px solid #2a3847;
+  color: #fafafa;
+}
+.theme-table td,
+.theme-table th {
+  border-bottom: 1px solid #2a3847;
+  padding: 5px 10px;
+  width: 33%;
+  font-size: 14px;
+}
+.theme-table th {
+  background: #16222d;
+  color: #e75635;
+  font-size: 20px;
+}
+.theme-table + .theme-table {
+  border-left: none;
+}
+/**********************************
 		Buttons Settings 
 ************************************/
+.section-header,
+.btn {
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
 .btn-black {
   text-transform: uppercase;
   color: white;
@@ -534,6 +765,11 @@ ______________________*/
   background-image: linear-gradient(to bottom, #273441, #364657);
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff273441', endColorstr='#ff364657', GradientType=0);
+}
+.btn-black.btn-lg {
+  font-size: 20px;
+  text-transform: none;
+  font-family: 'robotoregular', sans-serif;
 }
 .btn-black:focus,
 .btn-black:hover {
@@ -555,6 +791,114 @@ ______________________*/
   background-repeat: repeat-x;
   filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#fffdfee7', endColorstr='#ffd7dcc0', GradientType=0);
 }
+.theme-btn {
+  background: #e75635;
+  color: white;
+}
+.theme-btn:hover,
+.theme-btn:focus {
+  color: white;
+}
+.btn:focus {
+  outline: none;
+}
+.btn-all {
+  font-size: 28px;
+  background: #3f4f5f;
+  height: 47px;
+  line-height: 1.1;
+  color: #ccc;
+  margin-right: 15px;
+}
+.btn-all:focus,
+.btn-all:hover {
+  color: #ccc;
+}
+.page-header {
+  border-bottom: none;
+}
+.theme-pagination-2 {
+  margin-bottom: 0;
+}
+.theme-pagination-2 a {
+  font-size: 25px;
+  text-transform: uppercase;
+  color: #ccc;
+}
+.theme-pagination-2 a:hover {
+  color: #e75635;
+}
+.theme-pagination-2 .active a {
+  a: hover;
+}
+.author-listing-section {
+  background: #070f17;
+  border: 1px solid #0b1a28;
+  padding: 65px 30px 10px;
+  margin-bottom: 32px;
+  position: relative;
+  text-align: center;
+}
+.author-listing-section .btn {
+  width: 100%;
+  max-width: 133px;
+}
+.author-listing-section:before {
+  background: url(../images/bottom-corner.png);
+  display: inline-block;
+  width: 20px;
+  height: 10px;
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -10px;
+}
+.author-listing-section ul {
+  list-style: url(../images/user-icon.png) inside;
+  padding: 0;
+  font-size: 15px;
+  margin-bottom: 15px;
+  text-align: left;
+}
+.author-listing-section ul a {
+  color: #cacaca;
+}
+.author-listing-section ul li {
+  margin-bottom: 3px;
+}
+.author-listing-section .alphabet-search {
+  background: #e75635;
+  color: white;
+  height: 74px;
+  width: 74px;
+  display: block;
+  text-align: center;
+  line-height: 64px;
+  -moz-border-radius: 50%;
+  -webkit-order-radius: 50%;
+  border-radius: 50%;
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  margin-left: -37px;
+  border: 5px solid black;
+  font-size: 40px;
+}
+.rtl .author-listing-section ul {
+  text-align: right;
+}
+.form-control {
+  background: none;
+  border-color: #21303d;
+  color: white;
+}
+.form-control::-moz-placeholder {
+  color: #4f6479;
+}
+.form-control::-placeholder {
+  color: #ccc;
+}
 .section-header {
   background: #e75635;
   color: white;
@@ -567,6 +911,10 @@ ______________________*/
   text-align: center;
   vertical-align: middle;
   white-space: nowrap;
+}
+.box-header h3 {
+  line-height: 54px;
+  color: #ccc;
 }
 .social-buttons {
   padding-top: 15px;
@@ -606,30 +954,32 @@ ______________________*/
 /**********************************
 		Sidebar Settings 
 ***********************************/
-/************************
-	Thumnails Settings 
-*************************/
-.bx-wrapper .bx-prev:hover,
-.bx-wrapper .bx-prev {
-  background: url(../images/chevron.png) no-repeat center center;
+.feature-section {
+  color: #666;
+  font-size: 11px;
+  margin-bottom: 7px;
 }
-.bx-wrapper .bx-next:hover,
-.bx-wrapper .bx-next {
-  background: url(../images/chevron-right.png) no-repeat center center;
+.feature-section .img-thumbnail {
+  padding: 4px;
+  width: 100px;
 }
-/******************************
-	Slider Settings 
-*******************************/
-.bx-wrapper .bx-viewport {
-  border-width: 0;
-  background: none;
-  -webkit-box-shadow: none;
-  box-shadow: none;
-  left: 0;
-  height: auto !important;
+.feature-section p {
+  margin-bottom: 5px;
 }
-.theme-carosel {
-  margin-bottom: 0;
+.feature-section h5 {
+  font-size: 12px;
+  font-family: 'robotobold', sans-serif;
+  color: #ccc;
+  margin: 2px 0 5px;
+}
+.feature-section .feature-img {
+  float: left;
+  margin-right: 15px;
+}
+.rtl .feature-section .feature-img {
+  float: right;
+  margin-right: 0;
+  margin-left: 15px;
 }
 /*  Footer 
 -------------------------------------- */
@@ -687,6 +1037,13 @@ ______________________*/
 .icon-star.active {
   color: #e75635;
 }
+.icon-heart {
+  color: #6a7a89;
+}
+.icon-heart:hover,
+.icon-heart.active {
+  color: #e75635;
+}
 .title {
   font-family: 'robotobold', sans-serif;
   font-size: 20px;
@@ -729,6 +1086,9 @@ ______________________*/
 .rtl .close {
   float: left;
 }
+.model-wrap h3 {
+  font-family: 'robotobold', sans-serif;
+}
 @media (max-width: 767px) {
   .model-wrap {
     margin: 15px;
@@ -740,9 +1100,6 @@ ______________________*/
 /**********************
 	 SignUp/Login
  **********************/
-/***********************
-	footer Setting
-************************/
 /**********************
 	 Global Classes
  **********************/
@@ -750,6 +1107,9 @@ ______________________*/
   -moz-border-radius: 200px;
   -webkit-order-radius: 200px;
   border-radius: 200px;
+}
+.theme-text {
+  color: #e75635;
 }
 .fl {
   float: left;
@@ -792,26 +1152,123 @@ ______________________*/
   
 }
 @media (max-width: 979px) {
-  /***********************
-  	Header Setting
-  ************************/
-  /***********************
-  	buttons Setting
-  ************************/
-  /***************************************
-  	nav tabs Setting
-  ****************************************/
-  /***********************
-  	Header Setting
-  ************************/
+  h1 {
+    font-size: 60px;
+  }
+  .banner-wrap,
+  .banner-wrap-2 {
+    padding-bottom: 40px;
+    min-height: inherit;
+  }
 }
 @media (max-width: 767px) {
-  /***********************
-  	Header Setting
-  ************************/
+  h1 {
+    font-size: 38px;
+  }
+  h2 {
+    font-size: 30px;
+  }
+  .header-top {
+    padding: 20px 0 30px;
+  }
+  .navbar {
+    -moz-border-radius: 8px;
+    -webkit-order-radius: 8px;
+    border-radius: 8px;
+  }
+  .navbar .navbar-collapse {
+    padding: 0 15px;
+  }
+  .navbar .navbar-nav > li > a {
+    background-image: none;
+    line-height: 20px;
+  }
+  .navbar-header {
+    float: none;
+  }
+  .navbar-toggle {
+    float: left;
+    margin: 2px 0 0 15px;
+  }
+  .navbar-toggle span {
+    background: white;
+  }
+  .login-section {
+    margin: 5px 15px 3px;
+  }
+  .theme-pagination {
+    text-align: center;
+    margin: 0 0 15px;
+  }
+  .theme-pagination.pull-right {
+    float: none !important;
+  }
+  .sidebar-section > img {
+    margin: 0 auto;
+    display: block;
+  }
+  .social-buttons {
+    text-align: center;
+  }
+  .social-buttons .btn {
+    margin: 5px;
+  }
+  .social-icons {
+    margin: 3px 0;
+  }
+  .biograpy .img-section {
+    float: none !important;
+    margin: 0 0 10px;
+    text-align: center;
+    width: auto;
+    max-width: none;
+  }
+  .biograpy .details-section {
+    margin-left: 0;
+  }
+  .search-wrap .form-control {
+    height: auto;
+    font-size: 18px;
+  }
+  .search-wrap .input-group-btn .btn {
+    height: 47px;
+    font-size: 28px;
+    width: auto;
+  }
+  .page-header {
+    margin: 0;
+  }
+  .theme-pagination-2 a {
+    font-size: 14px;
+  }
+  .nav-tabs > li {
+    display: block;
+    float: none;
+  }
+  .rtl #contents,
+  .rtl #sidebar,
+  #contents,
+  #sidebar {
+    padding: 0;
+  }
+  .poem-details p {
+    font-size: 16px;
+  }
 }
 @media (max-width: 479px) {
-  /***********************
-  	Header Setting
-  ************************/
+  .logo-wrap {
+    width: 70%;
+    margin: 0 auto;
+  }
+  .logo-wrap a {
+    display: block;
+  }
+  .btn-all {
+    display: block;
+    margin: 0 0 10px;
+  }
+  .page-header .theme-btn {
+    float: none !important;
+    margin: 10px 0;
+  }
 }
